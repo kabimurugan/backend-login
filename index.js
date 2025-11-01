@@ -5,8 +5,10 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 
-app.listen(3000, ()=> console.log("server started in port:3000") )
+// ✅ Render gives a dynamic port, fallback 3000 for local testing
+const PORT = process.env.PORT || 3000;
 
+app.listen(PORT, () => console.log(`✅ Server started on port: ${PORT}`))
 
 const name = "kabilan"
 const password = 123
